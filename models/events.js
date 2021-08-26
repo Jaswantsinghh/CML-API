@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const event_schema =  mongoose.Schema({
+    id:mongoose.Schema.Types.ObjectId,
 	event_title:{
 		type:String,
 		required:true
@@ -22,4 +23,4 @@ const event_schema =  mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('events',event_schema );
+module.exports = mongoose.model('Events',event_schema );
