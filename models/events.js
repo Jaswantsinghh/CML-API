@@ -17,6 +17,10 @@ const event_schema =  mongoose.Schema({
         type:String,
         required:true
     },
+    event_image:{
+        type:String,
+        required:true
+    },
     event_status:{
         type:String,
         required:true

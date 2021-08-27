@@ -5,6 +5,7 @@ const cors = require('cors');
 require('dotenv').config();
 const createEvent=require('./routes/event');
 const path = require('path');
+const multer = require('multer');
 
 const app = express();
 
