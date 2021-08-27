@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 
 router.get('/create-event',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/../public/event.html'));
+    res.sendFile(path.join(__dirname,'/../public/create-event.html'));
 })
 
 const Storage = multer.diskStorage({
@@ -20,7 +20,7 @@ const Storage = multer.diskStorage({
 const upload = multer({
     storage:Storage,
     limits:{
-        fileSize: 1024*1024*5
+        fileSize: 1024*1024*1
     }
 }).single('event_image');
 

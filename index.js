@@ -3,19 +3,25 @@ const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-const createEvent=require('./routes/event');
+const createEvent=require('./routes/create-event');
+const indexPage=require('./routes/index');
+const eventsPage=require('./routes/events');
+const aboutPage=require('./routes/about');
+const contactPage=require('./routes/contact');
+const auth=require('./routes/auth');
 const path = require('path');
-const multer = require('multer');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname+'/public')));
+app.use('/', indexPage);
+app.use('/', aboutPage);
+app.use('/', eventsPage);
 app.use('/', createEvent);
-app.get('/show-events',(req,res)=>{
-  res.sendFile(path.join(__dirname+'/public/events.html'));
-});
+app.use('/', contactPage);
+app.use('/', auth);
 app.get('*',function(req, res){
   res.status(400).send('Oops!! This page does not exist :(');
 });
