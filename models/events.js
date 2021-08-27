@@ -24,6 +24,10 @@ const event_schema =  mongoose.Schema({
     event_status:{
         type:String,
         required:true
+    },
+    event_link:{
+        type:String,
+        required:true
     }
 });
 

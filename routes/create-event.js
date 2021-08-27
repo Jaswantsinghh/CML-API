@@ -32,7 +32,8 @@ router.post('/create-event',upload,(req,res,next)=>{
         event_date:req.body.event_date,
         event_time:req.body.event_time,
         event_image:req.file.filename,
-        event_status:req.body.event_status
+        event_status:req.body.event_status,
+        event_link:req.body.event_link
     })
     event.save()
     .then(result=>{
