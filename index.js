@@ -23,7 +23,7 @@ app.use('/', createEvent);
 app.use('/', contactPage);
 app.use('/', auth);
 app.get('*',function(req, res){
-  res.status(400).send('Oops!! This page does not exist :(');
+  res.status(400).sendFile(path.join(__dirname+'/public/error.html'));
 });
 
 mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true,useUnifiedTopology: true },() =>{
